@@ -1,5 +1,4 @@
 import React from "react"
-import { useWindowSize } from 'react-use'
 import { nanoid } from "nanoid"
 import Confetti from 'react-confetti'
 import Die from "../components/Die"
@@ -7,7 +6,7 @@ import Die from "../components/Die"
 export default function App() {
 
     const [dice, setDice] = React.useState(() => generateAllNewDice())
-
+// modified
     const buttonRef = React.useRef(null)
     
     const gameWon =
@@ -19,8 +18,6 @@ export default function App() {
             buttonRef.current.focus()
         }
     }, [gameWon])
-
-    const { width, height } = useWindowSize()
  
     function generateAllNewDice() {
         return new Array(10)
