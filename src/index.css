@@ -21,6 +21,7 @@ div#root {
 }
 
 main {
+    position: relative;
     background-color: #eceaea;
     height: 100%;
     border-radius: 5px;
@@ -40,6 +41,37 @@ main {
     font-weight: 400;
     margin-top: 0;
     text-align: center;
+}
+
+.dropdown-div {
+    display: grid;
+    grid-template: auto auto / 1fr 1fr;
+    margin-bottom: 2%;
+    column-gap: 4vw;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+label {
+    padding: 2px;
+    margin-left: 5px;
+    font-weight: 600;
+}
+
+select {
+    padding: 2%;
+    width: 7rem;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+select>option {
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
 }
 
 .dice-container {
@@ -80,16 +112,28 @@ button.roll-dice {
 }
 
 @media only screen and (max-width: 426px) {
+    .title {
+        margin-bottom: 3%;
+    }
+
+    .instructions {
+        margin: 3% 2%;
+        font-size: 0.7rem;
+    }
+
+    .dropdown-div {
+        margin-bottom: 6%;
+    }
 
     .dice-container {
         gap: 3vw;
-        margin-bottom: 15%;
+        margin-bottom: 9%;
     }
 
     .dice-container button {
-        height: 10vw;
-        width: 10vw;
-        font-size: 5vw;
+        height: 12.7vw;
+        width: 12.7vw;
+        font-size: 5.44vw;
     }
 
     button.roll-dice {
