@@ -17,8 +17,8 @@ export default function App() {
     const buttonRef = React.useRef(null)
     const intervalRef = React.useRef(null)
     
-    var click = new Audio("assets/click2.mp3")
-    var wrong = new Audio("assets/wrong.mp3")
+    var click = new Audio("../assets/click2.mp3")
+    var wrong = new Audio("../assets/wrong.mp3")
     
     const dicesElement = dice.map(dieObj =>
         <Die
