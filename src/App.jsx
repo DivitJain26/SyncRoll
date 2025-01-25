@@ -136,7 +136,7 @@ export default function App() {
             <p className="instructions">Click on rolling dice to freeze them. Make all dice show the same value to win!</p>
 
             <div className="dropdown-div">
-                <label htmlFor="interval">Mode</label>
+                <label htmlFor="interval">Difficulty</label>
 
                 <label htmlFor="numberOfDice">Dice</label>
 
@@ -176,7 +176,6 @@ export default function App() {
                 onClick={toggleGame}
                 ref={buttonRef}
             >{isGameOn ? "New Game" : isGameOver ? "New Game" : "Start"}</button>
-            <button onClick={() => click.play()}>kk</button>
         </main>
     )
 }
