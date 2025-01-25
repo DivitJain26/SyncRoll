@@ -176,7 +176,7 @@ export default function App() {
                 className="roll-dice"
                 onClick={toggleGame}
                 ref={buttonRef}
-            >{(isGameOver || !isGameOn) ? "Start" : "New Game"}</button>
+            >{isGameOn ? "New Game" : isGameOver ? "New Game" : "Start"}</button>
         </main>
     )
 }
