@@ -176,6 +176,7 @@ export default function App() {
                 onClick={toggleGame}
                 ref={buttonRef}
             >{isGameOn ? "New Game" : isGameOver ? "New Game" : "Start"}</button>
+            <button onClick={() => click.play()}>kk</button>
         </main>
     )
 }
