@@ -1,11 +1,10 @@
 {
-  "homepage": "https://DivitJain.github.io/SyncRoll",
+  "homepage": "https://github.com/DivitJain26/SyncRoll/",
   "name": "tenzies",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "dev": "vite",
