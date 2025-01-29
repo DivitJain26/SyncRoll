@@ -2,23 +2,25 @@ import React from "react"
 import { nanoid } from "nanoid"
 import Confetti from 'react-confetti'
 import Die from "../components/Die"
+import Timer from "../components/timer"
 
 export default function App() {
 
     const [dice, setDice] = React.useState(() => generateAllNewDice(10))
     const [isGameOn, setIsGameOn] = React.useState(false)
+    const [isGameOver, setIsGameOver] = React.useState(false)
     const [firstHeldValue, setFirstHeldValue] = React.useState(null)
     const [gameSettings, setGameSettings] = React.useState({
         interval: 1000,
         numberOfDice: 10,
     })
-    const [isGameOver, setIsGameOver] = React.useState(false)
 
     const buttonRef = React.useRef(null)
     const intervalRef = React.useRef(null)
     
     var click = new Audio("/click2.mp3")
     var wrong = new Audio("/wrong.mp3")
+    var switchh = new Audio("/switch.mp3")
     
     const dicesElement = dice.map(dieObj =>
         <Die
@@ -73,6 +75,7 @@ export default function App() {
         setDice(prevDie => prevDie.map(die => {
             return !die.isHeld ? { ...die, value: Math.ceil(Math.random() * 6) } : die
         }))
+        switchh.play()
     }
 
     function toggleGame() {
@@ -132,38 +135,47 @@ export default function App() {
             <div aria-live="polite" className="sr-only">
                 {gameWon && <p>Congratulations! You won! Press "New Game" to start again.</p>}
             </div>
-            <h1 className="title">SyncRoll</h1>
+            <h1 className="title">Sync Roll</h1>
             <p className="instructions">Click on rolling dice to freeze them. Make all dice show the same value to win!</p>
 
-            <div className="dropdown-div">
-                <label htmlFor="interval">Difficulty</label>
+            <div className="panel">
+                <div className="dropdown-div">
+                    <label htmlFor="interval">Difficulty</label>
+                    <select
+                        name="interval"
+                        value={gameSettings.interval}
+                        onChange={handleChange}
+                        disabled={isGameOn ? true : false}
+                    >
+                        <option value={1500}>Easy</option>
+                        <option value={1000}>Medium</option>
+                        <option value={600}>Hard</option>
+                        <option value={100}>Nightmare</option>
+                    </select>
+                </div>
 
-                <label htmlFor="numberOfDice">Dice</label>
+                < Timer 
+                    isGameOn={isGameOn}
+                    isGameOver={isGameOver}
+                    gameWon={gameWon}
+                />
 
-                <select
-                    name="interval"
-                    value={gameSettings.interval}
-                    onChange={handleChange}
-                    disabled={isGameOn ? true : false}
-                >
-                    <option value={1500}>Easy</option>
-                    <option value={1000}>Medium</option>
-                    <option value={600}>Hard</option>
-                    <option value={100}>Nightmare</option>
-                </select>
-
-                <select
-                    name="numberOfDice"
-                    value={gameSettings.numberOfDice}
-                    onChange={handleChange}
-                    disabled={isGameOn ? true : false}
-                >
-                    <option value={10}>10</option>
-                    <option value={15}>15</option>
-                    <option value={20}>20</option>
-                    <option value={25}>25</option>
-                </select>
+                <div className="dropdown-div">
+                    <label htmlFor="numberOfDice">Dice</label>
+                    <select
+                        name="numberOfDice"
+                        value={gameSettings.numberOfDice}
+                        onChange={handleChange}
+                        disabled={isGameOn ? true : false}
+                        >
+                        <option value={10}>10</option>
+                        <option value={15}>15</option>
+                        <option value={20}>20</option>
+                        <option value={25}>25</option>
+                    </select>
+                </div>
             </div>
+
 
             <div 
                 style={dieContainer}
