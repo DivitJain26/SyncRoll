@@ -51,7 +51,7 @@ export default function App() {
     // Cleanup the interval when the component unmounts
     React.useEffect(() => {
         return () => clearInterval(intervalRef.current);
-    }, [])
+    }, [gameWon])
 
     React.useEffect(() => {
         setDice(generateAllNewDice(gameSettings.numberOfDice));
@@ -72,10 +72,13 @@ export default function App() {
     }
 
     function roll() {
-        setDice(prevDie => prevDie.map(die => {
-            return !die.isHeld ? { ...die, value: Math.ceil(Math.random() * 6) } : die
-        }))
-        switchh.play()
+        if (!gameWon) {
+            setDice(prevDie => prevDie.map(die => {
+                return !die.isHeld ? { ...die, value: Math.ceil(Math.random() * 6) } : die
+            }))
+            switchh.play()
+            // console.log("roll")
+        }
     }
 
     function toggleGame() {

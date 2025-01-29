@@ -2,14 +2,14 @@ import React from "react";
 
 export default function Timer(props) {
 
-    const [time, setTime] = React.useState(0);
- 
+    const [time, setTime] = React.useState(0)
+    
     React.useEffect(() => {
         let interval = null;
         
         if (props.isGameOn && !props.isGameOver) {
             interval = setInterval(() => {
-                setTime((time) => time + 10)
+                setTime(time => time + 10)
             }, 10)
         }
 
@@ -27,7 +27,7 @@ export default function Timer(props) {
 
     }, [props.gameWon, props.isGameOn, props.isGameOver])
 
-    console.log(props.gameWon, props.isGameOn, props.isGameOver)
+    // console.log(props.gameWon, props.isGameOn, props.isGameOver)
 
     return (
         <div className="timer">
