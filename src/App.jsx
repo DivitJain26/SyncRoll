@@ -2,7 +2,7 @@ import React from "react"
 import { nanoid } from "nanoid"
 import Confetti from 'react-confetti'
 import Die from "../components/Die"
-import Timer from "../components/timer"
+import Timer from "/components/Timer"
 
 export default function App() {
 
