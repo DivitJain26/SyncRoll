@@ -35,7 +35,7 @@ export default function Timer(props) {
 
     }, [props.gameWon, props.isGameOn, props.isGameOver])
 
-    console.log(props.gameWon, props.isGameOn, props.isGameOver)
+    // console.log(props.gameWon, props.isGameOn, props.isGameOver)
 
     return (
         <div style={fontStyle} className="timer">
