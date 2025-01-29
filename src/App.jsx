@@ -5,8 +5,7 @@ import Die from "../components/Die"
 import Timer from "/components/Timer"
 
 export default function App() {
-    //new
-
+    
     const [dice, setDice] = React.useState(() => generateAllNewDice(10))
     const [isGameOn, setIsGameOn] = React.useState(false)
     const [isGameOver, setIsGameOver] = React.useState(false)

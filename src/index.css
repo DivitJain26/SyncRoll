@@ -101,17 +101,32 @@ button {
     cursor: pointer;
 }
 
-.dice-container button {
+.die {
     height: 7vw;
     width: 7vw;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+    padding: 15%;
+    display: grid;
+    grid-template: auto auto auto/ 1fr 1fr 1fr;
+    place-items: center;
+    gap: 0.5vw;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.253);
     border-radius: 10px;
     border: none;
-    background-color: white;
-    font-size: 3vw;
-    font-weight: bold;
 }
 
+.dot {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 80%;
+    background-color:rgb(0, 0, 0);
+    visibility: hidden;
+}
+
+.show {
+    visibility: visible;
+}
 
 button.roll-dice {
     height: 6.5%;
@@ -158,10 +173,15 @@ button.roll-dice {
         margin-bottom: 9%;
     }
 
-    .dice-container button {
+    .die {
         height: 12.7vw;
         width: 12.7vw;
-        font-size: 5.44vw;
+        border-radius: 7px;
+    }
+
+    .dot {
+        width: 85%;
+        height: 85%;
     }
 
     button.roll-dice {

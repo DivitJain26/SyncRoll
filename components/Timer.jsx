@@ -4,6 +4,8 @@ export default function Timer(props) {
 
     const [time, setTime] = React.useState(0)
     
+    const [fontStyle, setFontStyle] = React.useState({});
+
     React.useEffect(() => {
         let interval = null;
         
@@ -14,11 +16,17 @@ export default function Timer(props) {
         }
 
         if (!props.isGameOn && !props.isGameOver) {
+            setFontStyle({ color: "#000" })
             setTime(0)
         }
 
+        if (props.isGameOn && props.isGameOver) {
+            setFontStyle({ color: "#F4010D" })
+        }
+        
         if (props.gameWon) {
             clearInterval(interval)
+            setFontStyle({ color: "#59E391" })
         }
         
         return () => {
@@ -27,10 +35,10 @@ export default function Timer(props) {
 
     }, [props.gameWon, props.isGameOn, props.isGameOver])
 
-    // console.log(props.gameWon, props.isGameOn, props.isGameOver)
+    console.log(props.gameWon, props.isGameOn, props.isGameOver)
 
     return (
-        <div className="timer">
+        <div style={fontStyle} className="timer">
             <span className="digits">
                 {("0" + Math.floor((time / 60000) % 60)).slice(-2)}:
             </span>
