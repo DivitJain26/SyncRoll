@@ -109,7 +109,9 @@ export default function App() {
                     setFirstHeldValue(die.value)
                 }
                 if (die.value === firstHeldValue || firstHeldValue === null) {
-                    click.play()
+                    if (!die.isHeld) {
+                        click.play()
+                    }
                     return { ...die, isHeld: true }
                 } else {
                     wrong.play()
