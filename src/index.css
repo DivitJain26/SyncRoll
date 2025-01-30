@@ -46,7 +46,7 @@ main {
 .panel {
     display: flex;
     flex-direction: row;
-    column-gap: 2.5vw;
+    column-gap: 3vw;
     align-items: center;
     margin-bottom: 2%;
     font-family: 'Inter', sans-serif;
@@ -81,9 +81,9 @@ select>option {
 
 .timer {
     align-self: baseline;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: monospace;
     font-size: 1.3rem;
-    font-weight: 900;
+    font-weight: bold;
 }
 
 .mili-sec {
