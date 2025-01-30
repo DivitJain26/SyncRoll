@@ -37,15 +37,15 @@ export default function Die(props) {
             aria-label={`Die with value ${props.value}, 
             ${props.isHeld ? "held" : "not held"}`}
         >
-            <span className={`dot a ${props.value >= 2 ? "show" : ""}`}></span>
+            <span className={`dot a ${props.value >= 2 ? "show" : undefined}`}></span>
             <span></span>
-            <span className={`dot b ${props.value >= 4 ? "show" : ""}`}></span>
-            <span className={`dot c ${props.value === 6 ? "show" : ""}`}></span>
-            <span className={`dot d ${props.value % 2 !== 0 ? "show" : ""}`}></span>
-            <span className={`dot e ${props.value === 6 ? "show" : ""}`}></span>
-            <span className={`dot f ${props.value >= 4 ? "show" : ""}`}></span>
+            <span className={`dot b ${props.value >= 4 ? "show" : undefined}`}></span>
+            <span className={`dot c ${props.value === 6 ? "show" : undefined}`}></span>
+            <span className={`dot d ${props.value % 2 !== 0 ? "show" : undefined}`}></span>
+            <span className={`dot e ${props.value === 6 ? "show" : undefined}`}></span>
+            <span className={`dot f ${props.value >= 4 ? "show" : undefined}`}></span>
             <span></span>
-            <span className={`dot g ${props.value >= 2 ? "show" : ""}`}></span>
+            <span className={`dot g ${props.value >= 2 ? "show" : undefined}`}></span>
         </div>
     )
 }
