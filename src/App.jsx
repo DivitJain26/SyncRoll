@@ -11,7 +11,7 @@ export default function App() {
     const [isGameOver, setIsGameOver] = React.useState(false)
     const [firstHeldValue, setFirstHeldValue] = React.useState(null)
     const [gameSettings, setGameSettings] = React.useState({
-        interval: 1000,
+        interval: 950,
         numberOfDice: 10,
     })
 
@@ -150,10 +150,10 @@ export default function App() {
                         onChange={handleChange}
                         disabled={isGameOn ? true : false}
                     >
-                        <option value={1500}>Easy</option>
-                        <option value={1000}>Medium</option>
-                        <option value={600}>Hard</option>
-                        <option value={100}>Nightmare</option>
+                        <option value={1300}>Easy</option>
+                        <option value={950}>Medium</option>
+                        <option value={700}>Hard</option>
+                        <option value={300}>Nightmare</option>
                     </select>
                 </div>
 
