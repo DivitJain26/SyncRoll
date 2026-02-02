@@ -3,7 +3,7 @@
 **A Dice Synchronization Game Built with React**
 
 <p align="center">
-  <img src="/demo-picture.png" alt="SyncRoll Demo" width="800"/>
+  <img src="Public/demo-picture.png" alt="SyncRoll Demo" width="800"/>
 </p>
 
 **Live Demo:** https://syncroll2.onrender.com/
